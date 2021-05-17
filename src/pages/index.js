@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import * as React from "react"
 import Layout from "../components/Layout"
+import Card from "../components/Card"
 const IndexPage = ({data}) => {
   const {title, description} = data.site.siteMetadata;
   return (
@@ -14,6 +15,13 @@ const IndexPage = ({data}) => {
           </div>
         
       </div>  
+      <div className="p-8 flex flex-row justify-center flex-wrap">
+        {[1, 2, 3, 4].map(() => (
+              <div className="my-3 mx-2">
+              <Card />
+            </div>
+        ))}
+      </div>
     </Layout>
   )
 }
